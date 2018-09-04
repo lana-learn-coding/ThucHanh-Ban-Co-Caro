@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple caro</title>
+</head>
+<p align="center">
+    <output id="out"></output>
+</p>
+<p align="center">
+    <button type="button" onclick="tick()">Tick</button>
+</p>
+<body>
+<script>
+    let caro = [];
+    let showcaro = "";
+
+    for (let i = 0; i < 6; i++) {
+        caro.push([0, 0, 0, 0, 0, 0]);
+    }
+    print();
+
+
+    function tick() {
+        showcaro = "";
+        let x = Number(prompt("x?",1)) - 1;
+        let y = Number(prompt("y?",1)) - 1;
+        caro[x][y] = 1;
+        print();
+    }
+
+
+    function print() {
+        for (let i = 0; i < 5; i++) {
+            showcaro = showcaro + "<br>";
+            for (let j = 0; j < 5; j++) {
+                showcaro = showcaro + caro[i][j] + "&nbsp;&nbsp;&nbsp;&nbsp;";
+            }
+        }
+        document.getElementById("out").innerHTML = showcaro;
+    }
+</script>
+
+</body>
+</html>
